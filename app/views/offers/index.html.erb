@@ -14,9 +14,11 @@
     <% @offers.each do |offer| %>
       <tr>
         <td><%= offer.description %></td>
-        <td><%= link_to 'Pokaż', offer %></td>
+        <td><%= link_to 'Wyświetl', offer %></td>
+        <% if offer.user == current_user %>
         <td><%= link_to 'Edytuj', edit_offer_path(offer) %></td>
         <td><%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

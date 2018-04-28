@@ -4,6 +4,7 @@
   <strong>Opis:</strong>
   <%= @offer.description %>
 </p>
-
-<%= link_to 'Edycja', edit_offer_path(@offer) %> |
+<% if @offer.user == current_user %>
+<%= link_to 'Edycja', edit_offer_path(@offer) %> 
+<% end %>
 <%= link_to 'Wstecz', offers_path %>

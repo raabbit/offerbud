@@ -1,5 +1,7 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /offers
   # GET /offers.json
@@ -14,7 +16,7 @@ class OffersController < ApplicationController
 
   # GET /offers/new
   def new
-    @offer = Offer.new
+    @offer = current_user.offers.build
   end
 
   # GET /offers/1/edit
@@ -24,7 +26,7 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.json
   def create
-    @offer = Offer.new(offer_params)
+    @offer = current_user.offers.build(offer_params)
 
     respond_to do |format|
       if @offer.save
@@ -71,4 +73,11 @@ class OffersController < ApplicationController
     def offer_params
       params.require(:offer).permit(:description)
     end
+    
+    def correct_user
+      @offer = current_user.offers.find_by(id: params[:id])
+      redirect_to offers_path, notice: "Nie jesteś uprawniony do edycji tej oferty" if @offer.nil?
+    
+    end  
+    
 end
