@@ -1,4 +1,62 @@
-$jumbotron-bg: #f1f1f1;
+
+.jumbotron {
+    background-image: url("tool.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0 center;
+    
+}
+
+.center {
+    text-align: center;
+}
+
+
+body {
+    background-image: url("cb.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0 center;
+    
+}
+
+.container{
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.navbar-brand {
+    color: #000000;
+    font-family: 'Advent Pro', sans-serif;
+
+}
+
+.navbar-brand:hover {
+    color: #f4ab20;
+}
+
+
+.navbar-link {
+    color: #000000;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.navbar-link:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+#log {
+   color: #000;
+   font-family: 'Audiowide', cursive;
+
+}
+
+.form-group {
+    
+}
+
+.form-control {
+    
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /*
