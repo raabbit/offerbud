@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<div id="log"><h1>Lista ofert</h1></div>
+<div id="log">
+  <h1>Lista ofert</h1>
+</div>
+
+<%= form_tag(offers_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Offers" %>
+<%= submit_tag "Szukaj" %>
+<% end %>
+
 
 <table>
   <thead>
@@ -13,6 +21,7 @@
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
+  
         <td><%= offer.description %></td>
         <td><%= link_to 'Wyświetl', offer %></td>
         <% if offer.user == current_user %>
@@ -27,4 +36,5 @@
 <br>
 
 <%= link_to 'Nowa oferta', new_offer_path %>
+
 

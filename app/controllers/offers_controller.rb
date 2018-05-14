@@ -5,10 +5,9 @@ class OffersController < ApplicationController
 
   # GET /offers
   # GET /offers.json
-  def index
-    @offers = Offer.all
-  end
-
+def index
+    @offers = Offer.search(params[:search])
+end
   # GET /offers/1
   # GET /offers/1.json
   def show
@@ -79,5 +78,4 @@ class OffersController < ApplicationController
       redirect_to offers_path, notice: "Nie jesteś uprawniony do edycji tej oferty" if @offer.nil?
     
     end  
-    
 end
