@@ -1,5 +1,4 @@
-
-<%= form_for(@offer) do |f| %>
+<%= form_for @offer, html: { multipart: true } do |f| %>
   <% if @offer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
@@ -36,6 +35,11 @@
     <%= f.label :Adres, "Adres Firmy" %><br>
     <%= f.text_field :Adres %>
   </div>
+       <div class="form-group">
+    <%= f.label :avatar, "Zdjęcie oferty" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Utwórz ofertę" %>
   </div>

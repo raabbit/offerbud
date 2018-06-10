@@ -18,8 +18,8 @@
       <th>Nazwa Firmy</th></ br>
       <th>Adres Email</th></ br>
       <th>Telefon</th></ br>
-      <th>Adres Firmy</th>
-      
+      <th>Adres Firmy</th></ br>
+      <th>Zdjęcie oferty</th></ br>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,6 +34,7 @@
         <td><%= offer.Email %></td>
         <td><%= offer.Telefon %></td>
         <td><%= offer.Adres %></td>
+        <td><%= image_tag offer.avatar.url (:medium) %></td>
         <td><%= link_to 'Wyświetl', offer %></td>
         <% if offer.user == current_user %>
         <td><%= link_to 'Edytuj', edit_offer_path(offer) %></td>

@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 #Devise
 gem 'devise', '~> 4.4', '>= 4.4.3'
+#Photos
+gem 'paperclip', '~> 6.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
