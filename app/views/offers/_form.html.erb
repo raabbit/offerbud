@@ -13,10 +13,30 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :description, "Treść oferty" %><br>
+    <%= f.label :description, "Tytuł oferty" %><br>
     <%= f.text_field :description %>
   </div>
+   <div class="form-group">
+    <%= f.label :place, "Obszar działalności" %><br>
+    <%= f.text_field :place %>
+  </div>
+     <div class="form-group">
+    <%= f.label :Nazwa_Firmy, "Nazwa Firmy" %><br>
+    <%= f.text_field :Nazwa_Firmy %>
+  </div>
+     <div class="form-group">
+    <%= f.label :Email, "Adres email" %><br>
+    <%= f.text_field :Email %>
+  </div>
+     <div class="form-group">
+    <%= f.label :Telefon, "Telefon" %><br>
+    <%= f.text_field :Telefon %>
+  </div>
+     <div class="form-group">
+    <%= f.label :Adres, "Adres Firmy" %><br>
+    <%= f.text_field :Adres %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Utwórz ofertę" %>
   </div>
 <% end %>

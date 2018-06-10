@@ -1,8 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Opis:</strong>
+  <strong>Tytuł oferty:</strong>
   <%= @offer.description %>
+</p>
+
+<p>
+  <strong>Obszar działalności:</strong>
+  <%= @offer.place %>
+</p>
+
+<p>
+  <strong>Nazwa Firmy:</strong>
+  <%= @offer.Nazwa_Firmy %>
+</p>
+
+<p>
+  <strong>Adres Email:</strong>
+  <%= @offer.Email %>
+</p>
+
+<p>
+  <strong>Telefon:</strong>
+  <%= @offer.Telefon %>
+</p>
+
+<p>
+  <strong>Adres Firmy:</strong>
+  <%= @offer.Adres %>
 </p>
 <% if @offer.user == current_user %>
 <%= link_to 'Edycja', edit_offer_path(@offer) %> 

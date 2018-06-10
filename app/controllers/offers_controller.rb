@@ -70,7 +70,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      params.require(:offer).permit(:description)
+      params.require(:offer).permit(:description, :place, :Nazwa_Firmy, :Email, :Telefon, :Adres)
     end
     
     def correct_user

@@ -1,16 +1,16 @@
 
-  <div class="panel-heading"><h2>Logowanie</h2></div>
+  <div class="panel-heading"><h2><div id="log">Logowanie</div></h2></div>
     <div class="panel-body">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
+  <div class="form-row">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="form-group">
+  <div class="form-row">
     <%= f.label :password, "Hasło" %><br />
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -24,6 +24,8 @@
     <%= f.submit "Zaloguj", class: 'btn btn-warning' %>
   </div>
 <% end %>
-    </div>
+</br>
 
   <div class="panel-footer"><%= render "devise/shared/links" %></div>
+  
+</div>

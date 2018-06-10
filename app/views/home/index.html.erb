@@ -1,8 +1,14 @@
 <div class=" center jumbotron">
-    <div id ="log"><h1>OFFERBUD</h1></div>
-    <h2>Platforma ofertowa dla firm budowlanych</h2>
-    <h2>Nowe możliwości dla Twojej firmy</h2>
+    <div id ="log1">
+        <h1>OFFERBUD</h1>
+    </div>
+    <div id ="opis">
+        <h2>Platforma ofertowa dla firm budowlanych</h2>
+        <h2>Nowe możliwości dla Twojej firmy</h2>
+    </div>
     <%= link_to 'Lista ofert', offers_path, class: 'btn btn-warning' %>
-    <%= link_to 'Nowa oferta', new_offer_path, class: 'btn btn-warning' %> 
-    <%= link_to 'Logowanie', new_user_session_path, class: 'btn btn-warning' %>
+    <%= link_to 'Nowa oferta', new_offer_path, class: 'btn btn-danger' %> 
+    <%= link_to 'Logowanie', new_user_session_path, class: 'btn btn-success' %>
+    <%= link_to 'Szukaj w GOOGLE', "https://www.google.com/", class: 'btn btn-primary' %>
+ 
 </div>
