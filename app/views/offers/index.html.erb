@@ -9,44 +9,22 @@
 <%= submit_tag "Szukaj" %>
 <% end %>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Tytuł oferty</th></ br>
-      <th>Obszar działalności</th></ br>
-      <th>Nazwa Firmy</th></ br>
-      <th>Adres Email</th></ br>
-      <th>Telefon</th></ br>
-      <th>Adres Firmy</th></ br>
-      <th>Zdjęcie oferty</th></ br>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @offers.each do |offer| %>
-      <tr>
   
-        <td><%= offer.description %></td>
-        <td><%= offer.place %></td>
-        <td><%= offer.Nazwa_Firmy %></td>
-        <td><%= offer.Email %></td>
-        <td><%= offer.Telefon %></td>
-        <td><%= offer.Adres %></td>
-        <td><%= image_tag offer.avatar.url (:medium) %></td>
-        <td><%= link_to 'Wyświetl', offer %></td>
+        <%= offer.description %><br/>
+        <%= offer.place %><br/>
+        <%= offer.Nazwa_Firmy %><br/>
+        <%= offer.Email %><br/>
+        <%= offer.Telefon %><br/>
+        <%= offer.Adres %><br>
+        <%= image_tag offer.avatar.url (:medium) %><br>
+        <%= link_to 'Wyświetl', offer %><br/>
         <% if offer.user == current_user %>
-        <td><%= link_to 'Edytuj', edit_offer_path(offer) %></td>
-        <td><%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %></td>
+          <%= link_to 'Edytuj', edit_offer_path(offer) %><br/>
+          <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %><br/>
         <% end %>
-      </tr>
     <% end %>
-  </tbody>
-</table>
-
-</br>
-
+    <br>
 <%= link_to 'Nowa oferta', new_offer_path %>
 
 

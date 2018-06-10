@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= image_tag @offer.avatar.url (:medium) %>
   <strong>Tytuł oferty:</strong>
   <%= @offer.description %>
 </p>
@@ -30,6 +29,9 @@
   <strong>Adres Firmy:</strong>
   <%= @offer.Adres %>
 </p>
+
+<%= image_tag @offer.avatar.url (:medium) %>
+<br>
 
 <% if @offer.user == current_user %>
 <%= link_to 'Edycja', edit_offer_path(@offer) %> 
