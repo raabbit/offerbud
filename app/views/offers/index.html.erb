@@ -21,7 +21,8 @@
         <%= link_to 'Wyświetl', offer, class: "badge badge-pill badge-secondary" %>
         <% if offer.user == current_user %>
           <%= link_to 'Edytuj', edit_offer_path(offer), class: "badge badge-pill badge-secondary" %>
-          <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "badge badge-pill badge-secondary" %><br/>
+          <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "badge badge-pill badge-secondary" %></span>
+          <br/>
         <% end %>
     <% end %>
     <br>
