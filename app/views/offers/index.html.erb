@@ -6,7 +6,7 @@
 
 <%= form_tag(offers_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Szukaj oferty" %>
-<%= submit_tag "Szukaj" %>
+<%= submit_tag "Szukaj", class: 'btn btn-light' %>
 <% end %>
 
     <% @offers.each do |offer| %>
@@ -16,15 +16,14 @@
         <%= offer.Nazwa_Firmy %><br/>
         <%= offer.Email %><br/>
         <%= offer.Telefon %><br/>
-        <%= offer.Adres %><br>
-        <%= image_tag offer.avatar.url (:medium) %><br>
-        <%= link_to 'Wyświetl', offer %><br/>
+        <%= offer.Adres %><br/>
+        <%= image_tag offer.avatar.url (:medium) %><br/>
+        <%= link_to 'Wyświetl', offer, class: "badge badge-pill badge-secondary" %>
         <% if offer.user == current_user %>
-          <%= link_to 'Edytuj', edit_offer_path(offer) %><br/>
-          <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %><br/>
+          <%= link_to 'Edytuj', edit_offer_path(offer), class: "badge badge-pill badge-secondary" %>
+          <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "badge badge-pill badge-secondary" %><br/>
         <% end %>
     <% end %>
     <br>
-<%= link_to 'Nowa oferta', new_offer_path %>
-
+<%= link_to 'Nowa oferta', new_offer_path, class: 'btn btn-warning' %>
 
