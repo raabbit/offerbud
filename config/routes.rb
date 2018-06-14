@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :offers
+  resources :contacts, only: [:new, :create]
   devise_for :users
   root 'home#index'
   get 'home/about'
+  get 'home/contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

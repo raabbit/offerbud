@@ -8,6 +8,7 @@
     <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Strona główna', root_path, class: 'navbar-link' %></li>
         <li><%= link_to 'O nas', home_about_path, class: 'navbar-link' %></li>
+        <li><%= link_to 'Kontakt', new_contact_path, class: 'navbar-link' %></li>
         <li><%= link_to 'Lista ofert', offers_path, class: 'navbar-link' %> </li>
         
         <% if user_signed_in? %>

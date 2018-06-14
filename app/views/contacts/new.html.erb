@@ -1,0 +1,45 @@
+<div class="container">
+  <div id="log"><h1>Kontakt</h1></div>
+<p>
+<strong>Offerbud sp. z o. o. </strong><br>
+ul. Rynek 1<br>
+Kraków<br><br>
+NIP: 000-000-00-00
+REGON: 000000000
+KRS: 0000000000 <br>
+Telefon: (+48) 12 000 00 00<br>
+Fax: (+48) 12 000 00 00<br>
+E-mail: biuro@offerbud.pl<br>
+</p>
+<div id ="mapa">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.3210374431733!2d19.93625850318128!3d50.06154906178544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b120455da67%3A0xc3c7f5071b750d33!2zUnluZWsgR8WCw7N3bnk!5e0!3m2!1sen!2spl!4v1528975408952" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div><br>
+
+<div><strong>Napisz do nas:</strong></div><br>
+
+<div class="skinny_wrapper wrapper_padding">
+    <%= form_for @contact do |f| %>
+      <%= f.label :name, 'Imię i nazwisko' %><br>
+      <%= f.text_field :name, required: true %>
+      
+      <br>
+      
+      <%= f.label :email %><br>
+      <%= f.email_field :email, required: true %>
+      
+      <br>
+      
+      <%= f.label :message, 'Wiadomość' %><br>
+      <%= f.text_area :message, as: :text%><br>
+      
+      <div class="hidden">
+          <%= f.label :nickname %><br>
+          <%= f.text_field :nickname, hint: 'Zostaw to pole puste' %>
+      </div>
+      
+      <%= f.submit 'Wyślij wiadomość', class: 'btn btn-warning' %>
+      
+      <% end %>
+    
+</div>
+<br><br><br>
